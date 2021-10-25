@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Murach:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Murach</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Murach-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Murach:war exploded" />
+    </root>
+  </artifact>
+</component>
