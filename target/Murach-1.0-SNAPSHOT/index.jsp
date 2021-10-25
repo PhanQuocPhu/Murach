@@ -69,7 +69,7 @@
 						<img src="" class="card-img-top" alt="...">
 						<div class="card-body text-center">
 							<h5 class="card-title">Cart</h5>
-							<a href="loadProducts" class="btn btn-primary">Go Check out</a>
+							<a href="cart" class="btn btn-primary">Go Check out</a>
 						</div>
 					</div>
 				</div>

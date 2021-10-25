@@ -19,7 +19,11 @@ public class testUtil {
         System.out.println(listc.size());*/
         /*int id = CartModel.getLastId();
         System.out.println(id);*/
-        Cart cartUp = CartModel.getById(1);
-        System.out.println(cartUp.getId());
+        List<Cart> cartUp = CartModel.getByProId(2);
+        if(cartUp.size() != 0)
+            System.out.println("aaaa");
+        else
+            System.out.println("vvvv");
+
     }
 }

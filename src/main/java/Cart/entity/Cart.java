@@ -1,6 +1,7 @@
 package Cart.entity;
 
 import javax.persistence.*;
+import java.text.NumberFormat;
 
 @Entity
 public class Cart {
@@ -57,4 +58,5 @@ public class Cart {
     public void setProductByProductid(Product productByProductid) {
         this.productByProductid = productByProductid;
     }
+
 }

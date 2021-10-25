@@ -34,6 +34,12 @@ public class CartModel {
         session.clear();
         return (Cart) session.get(Cart.class, id);
     }
+    //Lấy theo proid
+    public static List<Cart> getByProId(int id) throws SQLException {
+        session.clear();
+        final String hql = "FROM Cart WHERE productByProductid.id=:productid";
+        return  session.createQuery(hql, Cart.class).setParameter("productid", id).list();
+    }
 
     //Thêm
     public static void create(Cart entity) {

@@ -6,7 +6,6 @@ import Cart.model.CartModel;
 import Cart.model.ProductModel;
 import util.ServletUtil;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -73,6 +72,7 @@ public class CartServlet extends HttpServlet {
 
         // perform action and set URL to appropriate page
     }
+
     private void manageCart(HttpServletRequest request, HttpServletResponse response, String path) throws IOException, SQLException {
         HttpSession session = request.getSession();
         int id = 0;
@@ -88,14 +88,23 @@ public class CartServlet extends HttpServlet {
         Product product = ProductModel.getById(proid);
         Cart cart = new Cart();
         Cart cartUp = CartModel.getById(cartid);
+        List<Cart> listCP = CartModel.getByProId(proid);
         System.out.println(cartid);
         switch (path) {
             case "/add":
-                id = CartModel.getLastId() + 1;
-                cart.setId(id);
-                cart.setProductByProductid(product);
-                cart.setQuantity(quantity);
-                CartModel.create(cart);
+                if (listCP.size() == 0) {
+                    id = CartModel.getLastId() + 1;
+                    cart.setId(id);
+                    cart.setProductByProductid(product);
+                    cart.setQuantity(quantity);
+                    CartModel.create(cart);
+                } else {
+                    for (Cart ca : listCP) {
+                        cartUp = CartModel.getById(ca.getId());
+                        cartUp.setQuantity(ca.getQuantity() + 1);
+                        CartModel.update(cartUp);
+                    }
+                }
                 response.sendRedirect("/cart/detail");
                 break;
             case "/update":
