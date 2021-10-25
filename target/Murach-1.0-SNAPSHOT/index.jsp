@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="swiper-slide card">
-						<img src="" class="card-img-top" alt="...">
+						<img src="<c:url value = "/asset/images/Cart-ex.png"/>" class="card-img-top" alt="...">
 						<div class="card-body text-center">
 							<h5 class="card-title">Cart</h5>
 							<a href="cart" class="btn btn-primary">Go Check out</a>

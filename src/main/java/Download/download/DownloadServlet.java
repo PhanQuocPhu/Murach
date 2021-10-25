@@ -33,9 +33,23 @@ public class DownloadServlet extends HttpServlet {
         if (action == null) {
             action = "viewAlbums";  // default action
         }
-
         // perform action and set URL to appropriate page
         String url = "/Download/index.jsp";
+        switch (action){
+            case "viewAlbums":
+                url = "/Download/index.jsp";
+                break;
+            case "checkUser":
+                url = "/Download/index.jsp";
+                break;
+            case "viewCookies":
+                url = "/Download/index.jsp";
+                break;
+            case "deleteCookies":
+                url = "/Download/index.jsp";
+                break;
+
+        }
         if (action.equals("viewAlbums")) {
             url = "/Download/index.jsp";
         } else if (action.equals("checkUser")) {
@@ -129,12 +143,14 @@ public class DownloadServlet extends HttpServlet {
     private String deleteCookies(HttpServletRequest request, HttpServletResponse response) {
 
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            cookie.setMaxAge(0); //delete the cookie
-            cookie.setPath("/Download"); //allow the download application to access it
-            response.addCookie(cookie);
+        if (cookies != null){
+            for (Cookie cookie : cookies) {
+                cookie.setValue("");
+                cookie.setMaxAge(0); //delete the cookie
+                cookie.setPath("/Download"); //allow the download application to access it
+                response.addCookie(cookie);
+            }
         }
-        String url = "/Download/delete_cookies.jsp";
-        return url;
+        return "/Download/delete_cookies.jsp";
     }
 }
