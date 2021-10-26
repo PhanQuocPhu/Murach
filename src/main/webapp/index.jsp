@@ -77,7 +77,7 @@
 				<div class="swiper-pagination"></div>
 			</div>
 			<div class="text-center">
-				<a class="btn btn-Danger" href="https://hcmute-group-9-assignment-link.herokuapp.com/"> Back To Assignment Link</a>
+				<a class="btn btn-danger" href="https://hcmute-group-9-assignment-link.herokuapp.com/"> Back To Assignment Link</a>
 			</div>
 		</div>
 	</body>
