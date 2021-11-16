@@ -55,7 +55,7 @@
 				<!-- Brand -->
 				<a class="navbar-brand" href="/">
 					<img class="mb-2" src="${pageContext.request.contextPath}/asset/pyro_200.png"
-						 style="width: 20%; height: 2	0%" alt="">
+						 style="width: 20%; height: 20%" alt="">
 				</a>
 
 				<!-- Links -->
